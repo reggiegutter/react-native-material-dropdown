@@ -75,8 +75,6 @@ export default class Dropdown extends PureComponent {
       "landscape-left",
       "landscape-right",
     ],
-
-    useNativeDriver: false,
   };
 
   static propTypes = {
@@ -105,6 +103,8 @@ export default class Dropdown extends PureComponent {
     }),
 
     dropdownPosition: PropTypes.number,
+
+    fontAnimate: PropTypes.string.isRequired,
 
     rippleColor: PropTypes.string,
     rippleCentered: PropTypes.bool,
@@ -150,7 +150,7 @@ export default class Dropdown extends PureComponent {
 
     supportedOrientations: PropTypes.arrayOf(PropTypes.string),
 
-    useNativeDriver: PropTypes.bool,
+    useNativeDriver: PropTypes.bool.isRequired,
   };
 
   constructor(props) {
