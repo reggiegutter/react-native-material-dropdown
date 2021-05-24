@@ -149,8 +149,6 @@ export default class Dropdown extends PureComponent {
     // pickerStyle: ViewPropTypes.style,
 
     supportedOrientations: PropTypes.arrayOf(PropTypes.string),
-
-    useNativeDriver: PropTypes.bool.isRequired,
   };
 
   constructor(props) {
@@ -211,7 +209,6 @@ export default class Dropdown extends PureComponent {
       dropdownMargins: { min: minMargin, max: maxMargin },
       animationDuration,
       absoluteRTLLayout,
-      useNativeDriver,
     } = this.props;
 
     if (disabled) {
@@ -295,7 +292,7 @@ export default class Dropdown extends PureComponent {
           Animated.timing(opacity, {
             duration: animationDuration,
             toValue: 1,
-            useNativeDriver,
+            useNativeDriver: false,
           }).start(() => {
             if (this.mounted && "ios" === Platform.OS) {
               let { flashScrollIndicators } = this.scroll || {};
@@ -311,13 +308,13 @@ export default class Dropdown extends PureComponent {
   }
 
   onClose(value = this.state.value) {
-    let { onBlur, animationDuration, useNativeDriver } = this.props;
+    let { onBlur, animationDuration } = this.props;
     let { opacity } = this.state;
 
     Animated.timing(opacity, {
       duration: animationDuration,
       toValue: 0,
-      useNativeDriver,
+      useNativeDriver: false,
     }).start(() => {
       this.focused = false;
 
