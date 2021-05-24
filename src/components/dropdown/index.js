@@ -131,7 +131,7 @@ export default class Dropdown extends PureComponent {
     disabledItemColor: PropTypes.string,
     baseColor: PropTypes.string,
 
-    itemTextStyle: TextPropTypes.style,
+    // itemTextStyle: TextPropTypes.style,
 
     itemCount: PropTypes.number,
     itemPadding: PropTypes.number,
@@ -144,9 +144,9 @@ export default class Dropdown extends PureComponent {
     renderBase: PropTypes.func,
     renderAccessory: PropTypes.func,
 
-    containerStyle: ViewPropTypes.style,
-    overlayStyle: ViewPropTypes.style,
-    pickerStyle: ViewPropTypes.style,
+    // containerStyle: ViewPropTypes.style,
+    // overlayStyle: ViewPropTypes.style,
+    // pickerStyle: ViewPropTypes.style,
 
     supportedOrientations: PropTypes.arrayOf(PropTypes.string),
 
